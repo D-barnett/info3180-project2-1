@@ -1,0 +1,63 @@
+<wishlistheader></wishlistheader>
+<div class="container col-lg-12" ng-controller="NewWishController">
+  <h1>Create New Wish</h1>
+  <div ng-form="wishForm" ng-class="{'has-error':
+    (wishForm.url.$invalid && wishForm.url.$dirty) || 
+    (wishForm.title.$invalid && wishForm.title.$dirty) ||
+    (wishForm.description.$invalid && wishForm.description.$dirty)}">
+<div class="col-lg-6">
+
+<table style="height: 118px;" width="425">
+<tbody>
+<tr>
+<td style="text-align: left;">
+
+      <input type="text" class="form-control" name="title" ng-model="title" placeholder="Title" required>
+    <uib-alert type="danger" ng-if="wishForm.title.$dirty && wishForm.title.$invalid">Please enter a name</uib-alert>
+    <br>
+</td>
+</tr>
+
+<tr>
+<td style="text-align: left;">
+
+   <div class="input-group">
+      <input type="text" class="form-control" name="url" ng-model="url" placeholder="Enter a URL" required>
+      <span class="input-group-btn text-center">
+        <button class="btn btn-default btn-secondary" type="button" ng-click="imageSearch(url)">Image Search</button>
+      </span>
+      </div>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="{{image}}" style="max-height:100px; max-width:100px; margin:auto; display:block;">
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align: left;">
+<textarea type="text" class="form-control" name="description" ng-model="description" placeholder="Enter a description" style="max-width:100%" required> </textarea>
+     <uib-alert type="danger" ng-if="wishForm.description.$dirty && wishForm.description.$invalid">Please enter a description</uib-alert>
+    <uib-alert type="danger" ng-if="urlfound==false">Please enter a URL</uib-alert>
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align: left;">
+<br>
+        <button type="submit" class="btn btn-success btn-lg" ng-click="newWish()">Add Wish</button>
+</td>
+</tr>
+
+
+</tbody>
+</table>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>

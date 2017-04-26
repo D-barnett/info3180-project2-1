@@ -1,0 +1,55 @@
+<div class="container v-center" ng-controller="LoginController">
+    <h1 class="text-center">Login</h1>
+    <div ng-form="loginForm" ng-class="{'has-error':
+    (loginForm.email.$invalid && loginForm.email.$dirty) || 
+    (loginForm.password.$invalid && loginForm.password.$dirty)}" class="row text-center">
+
+
+        <div class="v-center">
+            <table style="height: 118px;" width="425">
+<tbody>
+<tr>
+<td style="text-align: left;">
+
+        <input type="text" class="form-control" name='email' ng-model="email" placeholder="Enter your email" required>
+        <uib-alert type="danger" ng-if="loginForm.email.$dirty && loginForm.email.$invalid">Please enter your email</uib-alert>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+</br>
+    <input type="password" class="form-control" name="password" ng-model="password" placeholder="Enter your password" required>
+          <uib-alert type="danger" ng-if="loginForm.password.$dirty && loginForm.password.$invalid">Please enter your password</uib-alert>
+</td>
+
+</tr>
+
+
+
+
+</tr>
+<tr>
+<td style="text-align: center;">
+    </br>
+    <uib-alert type="danger" ng-if="errorMessage">{{errorMessage}}</uib-alert>
+
+   <a href="#/" class="btn btn-lg btn-default">Back</a>
+
+
+
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="submit" class="btn btn-success btn-lg" ng-click="login()">Login</button>
+
+</td>
+
+
+</tr>
+</tbody>
+</table>
+
+          </div>
+
+
+  </div>
+</div>
+
